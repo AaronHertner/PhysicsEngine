@@ -1,4 +1,4 @@
-public class Ball extends Object {
+public class  Ball extends Object {
 
     //member variables
     private double velocity;
@@ -14,7 +14,6 @@ public class Ball extends Object {
         sideLength =  0;
         angle =  0;
         x = y = 0;
-
     }
 
     //overridden abstract methods
@@ -31,5 +30,12 @@ public class Ball extends Object {
     //class methods
     public double totalEnergy(){
         return potentialEnergy() + kineticEnergy();
+    }
+
+    public double verticalAcceleration(){
+        return Math.sin(acceleration);
+    }
+    public double horizontalAcceleration(){
+        return Math.cos(acceleration); 
     }
 }
