@@ -36,6 +36,6 @@ public class  Ball extends Object {
         return Math.sin(acceleration);
     }
     public double horizontalAcceleration(){
-        return Math.cos(acceleration); 
+        return Math.cos(acceleration);
     }
 }
