@@ -32,10 +32,28 @@ public class  Ball extends Object {
         return potentialEnergy() + kineticEnergy();
     }
 
+    //acceleration components
     public double verticalAcceleration(){
         return Math.sin(acceleration);
     }
     public double horizontalAcceleration(){
         return Math.cos(acceleration);
+    }
+
+    //dropping simulation
+    public void drop(){
+        if(height == 0){
+            System.out.println("Ball has reached the ground: 0s.");
+        }
+        else{
+            double velocity = 0;
+            while(height != 0){
+                velocity += Environment.time * Environment.gravity;
+                height -= velocity;
+                Environment.time++;
+            }
+            System.out.println("Ball has reached the ground: " + Environment.time + "s.");
+            Environment.time = 0;
+        }
     }
 }
