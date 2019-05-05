@@ -21,10 +21,12 @@ public abstract class Object {
         this.mass = x;
     }
     public void setHeight (double x){
-        this.height = x;
+        if(x >= 0) {
+            this.height = x;
+        }
     }
     public void setAngle(double x){
-        if(x > 90 || x < 0) {
+        if(x <= 90 && x >= 0) {
             this.angle = x;
         }
     }
