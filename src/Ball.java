@@ -27,6 +27,9 @@ public class  Ball extends Object {
         return (mass * Environment.gravity * height);
     }
 
+    //getters setters
+    public void setAcceleration(double x){acceleration = x;}
+
     //class methods
     public double totalEnergy(){
         return potentialEnergy() + kineticEnergy();
@@ -72,5 +75,10 @@ public class  Ball extends Object {
         while(height > 0 ){
             velocity += horizontalAcc;
         }
+    }
+
+    public void strike(Club club){
+        double force = club.swingStrength();
+        this.setAcceleration(force/mass);
     }
 }
