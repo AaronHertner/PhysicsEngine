@@ -53,7 +53,24 @@ public class  Ball extends Object {
                 Environment.time++;
             }
             System.out.println("Ball has reached the ground: " + Environment.time + "s.");
+            velocity = 0;
             Environment.time = 0;
+        }
+    }
+
+    public void roll(double angle, double length){
+        double horizontalAcc = Environment.gravity * Math.cos(angle);   //horizontal acceleration
+        double normal = Environment.gravity * Math.sin(angle);          //normal force
+        this.height = Math.sin(angle) * length;                         //height of object
+
+        //force loss due to friction
+        double frictionLoss = -(normal * frictionCoefficient);
+
+        //f = ma
+
+
+        while(height > 0 ){
+            velocity += horizontalAcc;
         }
     }
 }
