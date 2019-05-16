@@ -4,6 +4,7 @@ public class Golfer {
     public String  name;
     public int     age;
     private int    score;
+    Club[]         bag;
 
     public Golfer(){
         score = 0;
